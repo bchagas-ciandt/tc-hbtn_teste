@@ -30,6 +30,7 @@ public class Person {
         return isMei;
     }
 
+	@SuppressWarnings("deprecation")
     public boolean isMaior() {
         Calendar cal = GregorianCalendar.getInstance();
         int anoAtual = cal.get((Calendar.YEAR));
