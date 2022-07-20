@@ -1,6 +1,4 @@
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class Person {
     private String name;
@@ -29,12 +27,10 @@ public class Person {
         }
         return isMei;
     }
-
-	@SuppressWarnings("deprecation")
+    @SuppressWarnings("deprecation")
     public boolean isMaior() {
-        Calendar cal = GregorianCalendar.getInstance();
-        int anoAtual = cal.get((Calendar.YEAR));
-        if (anoAtual - birthDate.getYear() >= 18) {
+        Date hoje = new Date(System.currentTimeMillis());
+        if (hoje.getYear() - birthDate.getYear() >= 18) {
             return true;
         }
         return false;
@@ -96,3 +92,4 @@ public class Person {
         this.salary = salary;
     }
 }
+
